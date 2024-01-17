@@ -1,0 +1,36 @@
+node_modules
+build
+# 整个项目里以test为名称的文件，文件夹以及文件夹里的内容(包含子文件夹和子文件)都被忽略，名称不区分大小写
+test
+
+# 整个项目里以test为名称文件夹以及文件夹里的内容(包含子文件夹和子文件)都被忽略，名称不区分大小写
+# test/
+
+# /开头表示目录，以.gitignore文件所在位置为起点, 和它同级的以test为名称的文件，文件夹以及文件夹里的内容(包含子文件夹和子文件)被忽略，名称不区分大小写
+# /test
+
+# 以.gitignore文件所在位置为起点, 和它同级的以test为名称的文件夹以及文件夹里的内容(包含子文件夹和子文件)被忽略，名称不区分大小写
+# /test/
+
+# 和/test/*效果一样，以.gitignore文件所在位置为起点, 和它同级的以test为名称的文件夹里的内容(包含子文件夹和子文件)被忽略，test文件夹本身不忽略，名称不区分大小写
+# test/*
+
+# 忽略和.gitignore文件同级的，以test为名称的文件夹下除了aaa.js以外的文件和文件夹， test/* 换成test/ 不可以，因为test/ 会忽略test文件夹本身，如果父目录被忽略，用！设置子文件不生效
+# test/*
+# !test/aaa.js
+
+#和.gitignore文件同级的，test文件夹下aaa/bbb.js文件被忽略, ccc文件夹下的不被忽略
+# test/*.js
+
+# 和.gitignore文件同级的，test文件夹下所有的.js都被忽略，文件夹不被忽略
+# test/**/*.js
+
+#和.gitignore文件同级的.js文件被忽略
+# /*.js
+
+# 整个项目里的.js文件被忽略
+# *.js
+yarn-debug.log*
+yarn-error.log*
+.editorconfig
+*.local*

@@ -1,0 +1,20 @@
+/**
+@import '~antd/dist/antd.less';
+在App.less里引入antd.less, 无法正常使用antd组件，antd的样式会被模块化，原因是webpack处理App.less的@import命令时，发现引入的是less文件，会把它交给less-loader处理，处理过程中会把antd.less
+里的css 代码注入到App.less里，因此交给css-loader的App.less里已经没有 @import '~antd/dist/antd.less' 这行代码了，取而代之的是被less-loader处理过的文件里的代码
+此时css-loader的模块化就已经没法对antd.less的内容做额外处理了（模块化的配置以文件名作区分，此时antd.less的css代码和App.less本身的css代码的混在App.less文件里，没法处理）
+*/
+/**
+@import '~antd/dist/antd.css';
+在App.less里引入antd.css, 可以正常使用antd组件(用默认主题)，antd的样式不会被模块化，原因是webpack处理App.less的@import命令时，发现引入的是css文件
+直接交给css-loader处理，在css-loader（modules-mode可通过文件名，针对不同文件做不同处理），里对antd.css做额外处理，让他不被模块化
+*/
+.app {
+    padding: 20px;
+    .title {
+        color: red;
+    }
+    .imgBox {
+        display: block;
+    }
+}
