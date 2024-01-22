@@ -1,5 +1,5 @@
-@orange: #00ff00;
-.bordered {
+$green: #00ff00;
+@mixin bordered {
     border-top: dotted 1px black;
     border-bottom: solid 2px black;
 }

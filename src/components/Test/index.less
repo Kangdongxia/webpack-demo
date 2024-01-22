@@ -1,7 +1,13 @@
-@import '@/common.less';
+// 使用webpack打包，可以用@/的路径别名，使用lessc编译不可以，会报找不到文件的错误
+// @import '@/common.less';
+// less编译，@import里的 mixin 不管是否被使用，都会被编译到css文件中， 变量则不会，编译时会找到变量对应的值来替换变量
+// npx --registry https://registry.npmmirror.com lessc src/components/Test/index.less src/components/Test/index.css 
+@import 'src/common.less';
 .root {
     padding: 20px;
     .content {
-        color: @orange
+        color: @orange;
+        // color: red;
+        // .bordered();
     }
 }
