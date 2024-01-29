@@ -11,6 +11,7 @@ const App: React.FC = () => {
                 <div className={styles.title}>app</div>
                 <div className={styles.imgBox}>
                     <img src={require('@/assets/img/img.jpeg')} alt="" />
+                    <img src='./static/img.jpeg' alt="" />
                 </div>
             </div>
             <Test a={1} onChildHandler={onChildHandler} />

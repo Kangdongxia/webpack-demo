@@ -1,7 +1,10 @@
-// 使用webpack打包，可以用@/的路径别名，使用sass 编译不可以，会报找不到文件的错误, 也不能写成 @import 'src/common2.scss';
+
+/*
+使用webpack打包，可以用@/的路径别名，使用sass 编译不可以，会报找不到文件的错误, 也不能写成 @import 'src/common2.scss';
+sass编译， 引用的文件里的变量和mixin都不会出现在编译结果中，如果变量或mixin被使用，会找到对应的值，进行替换
+npx --registry https://registry.npmmirror.com sass --watch src/components/testScss/index.scss src/components/testScss/index.css
+*/
 @import '../../common2.scss';
-// sass编译， 引用的文件里的变量和mixin都不会出现在编译结果中，如果变量或mixin被使用，会找到对应的值，进行替换
-// npx --registry https://registry.npmmirror.com sass --watch src/components/testScss/index.scss src/components/testScss/index.css
 .root {
     padding: 20px;
     .content {
